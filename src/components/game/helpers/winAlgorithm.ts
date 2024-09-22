@@ -21,7 +21,7 @@ export const winAlgorithm = ({
     });
   };
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     if (
       newBoard[i][0].checked &&
       newBoard[i][0].sign === newBoard[i][1].sign &&
