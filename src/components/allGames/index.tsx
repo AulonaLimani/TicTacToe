@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { LoginForm } from "../game/LoginForm";
 import CryptoJS from "crypto-js";
 import SessionContext from "../../SessionContext";
+import { toast } from "react-toastify";
 
 export const AllGames = (): JSX.Element => {
   const { playerId } = useParams();
@@ -42,11 +43,11 @@ export const AllGames = (): JSX.Element => {
       },
       onCompleted: (data) => {
         if (data.login === null) {
-          alert("Wrong password!");
+          toast.error("Wrong password!");
           handleSubmiting(false);
           return;
         }
-        alert("Logged in successfully!");
+        toast.success("Logged in successfully!");
         updateContext(Number.parseInt(playerId ?? "0"));
         setLoggedIn(true);
         return;

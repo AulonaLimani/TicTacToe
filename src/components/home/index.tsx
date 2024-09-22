@@ -6,6 +6,7 @@ import { useCreatePlayersMutation } from "../../gql/generated";
 import { useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 
 const defaultPlayer: Players = {
   player_one: "",
@@ -35,11 +36,11 @@ export const Home = () => {
         },
       },
       onCompleted: async (data) => {
-        alert("Players create successfully!");
+        toast.success("Players create successfully!");
         navigate(`/game/${data.createPlayers.id}`);
       },
       onError() {
-        alert("Failed to create players!");
+        toast.error("Failed to create players!");
       },
     });
   };

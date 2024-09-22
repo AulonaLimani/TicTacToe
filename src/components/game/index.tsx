@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { LoginForm } from "./LoginForm";
 import CryptoJS from "crypto-js";
 import SessionContext from "../../SessionContext";
+import { toast } from "react-toastify";
 
 const defaultNode: NodeType = { checked: false, sign: "", won: false };
 const createDefaultBoard = (): NodeType[][] => [
@@ -26,8 +27,8 @@ const createDefaultBoard = (): NodeType[][] => [
   [defaultNode, defaultNode, defaultNode],
 ];
 
-const scoreFormatter = (score: string): ScoreType => {
-  const [x, o] = score.split("-").map((s) => Number.parseInt(s));
+const scoreFormatter = (score?: string): ScoreType => {
+  const [x, o] = (score ?? "0-0").split("-").map((s) => Number.parseInt(s));
   return { x, o };
 };
 
@@ -59,11 +60,14 @@ export const Game = () => {
 
   const [register] = useRegisterMutation();
 
+  const [score, setScore] = useState<ScoreType>(scoreFormatter());
+
   const { data: getPlayerData, loading: loginLoading } = useGetPlayerByIdQuery({
     variables: {
       id: Number.parseInt(playerId ?? "0"),
     },
     onCompleted: (data) => {
+      setScore(scoreFormatter(data.getPlayer?.score));
       if (data.getPlayer?.loged_in === false) {
         setLoggedIn(true);
       }
@@ -76,14 +80,10 @@ export const Game = () => {
     player_two: p2 = "Player two",
     sign_one: s1 = "x",
     sign_two: s2 = "o",
-    score: defaultScore,
     loged_in: logedin = false,
   } = getPlayerData?.getPlayer ?? {};
 
-  const initialScore = scoreFormatter(defaultScore ?? "0-0");
-
   const [count, setCount] = useState<number>(1);
-  const [score, setScore] = useState<ScoreType>(initialScore);
   const [winner, setWinner] = useState<SignType>("");
 
   const homeButton = () => {
@@ -115,7 +115,7 @@ export const Game = () => {
           password: hash,
         },
         onCompleted: () => {
-          alert("Registered successfully!");
+          toast.success("Registered successfully!");
           updateContext(Number.parseInt(playerId ?? "0"));
           navigate(goHome ? "/" : `/games/${playerId}`);
           registered = true;
@@ -123,7 +123,7 @@ export const Game = () => {
       });
       if (registered) return;
       handleSubmiting(false);
-      alert("Failed to register!");
+      toast.error("Failed to register!");
       return;
     } else {
       await login({
@@ -133,11 +133,11 @@ export const Game = () => {
         },
         onCompleted: (data) => {
           if (data.login === null) {
-            alert("Wrong password!");
+            toast.error("Wrong password!");
             handleSubmiting(false);
             return;
           }
-          alert("Logged in successfully!");
+          toast.success("Logged in successfully!");
           updateContext(Number.parseInt(playerId ?? "0"));
           setLoggedIn(true);
           return;

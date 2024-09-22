@@ -11,12 +11,14 @@ export const Input = ({ label, type, name }: P) => (
     <label htmlFor={name} className="inputLabel">
       {label}
     </label>
-    <Field
-      type={type}
-      placeholder={label.slice(0, -1)}
-      name={name}
-      className="inputClass"
-    />
-    <ErrorMessage name={name} component="div" />
+    <div className="inputFormContainer">
+      <Field
+        type={type}
+        placeholder={label.slice(0, -1)}
+        name={name}
+        className="inputClass"
+      />
+      <ErrorMessage name={name} component="div" />
+    </div>
   </div>
 );
