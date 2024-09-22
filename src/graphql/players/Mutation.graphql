@@ -1,0 +1,51 @@
+mutation CreatePlayers($playersCreateInput: PlayersCreateInput!) {
+  createPlayers(playersCreateInput: $playersCreateInput) {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+  }
+}
+
+mutation UpdatePlayer($id: Int!, $playersUpdateInput: UpdatePlayersInput!) {
+  updatePlayers(id: $id, playersUpdateInput: $playersUpdateInput) {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+  }
+}
+
+mutation OnWin($id: Int!, $board: String!, $score: String!) {
+  onWin(id: $id, board: $board, score: $score)
+}
+
+mutation Register($id: Int!, $password: String!) {
+  register(id: $id, password: $password) {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+  }
+}
+
+mutation DeletePlayer($deletePlayersInput: DeletePlayersInput!) {
+  deletePlayers(deletePlayersInput: $deletePlayersInput) {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+  }
+}

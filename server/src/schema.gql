@@ -1,0 +1,85 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateGameInput {
+  board: String!
+  players_id: Int
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DeleteGameInput {
+  id: Int!
+}
+
+input DeletePlayersInput {
+  id: Int!
+}
+
+type Game {
+  board: String!
+  id: Int!
+  players: Players
+  players_id: Int
+}
+
+type Mutation {
+  createGame(createGameInput: CreateGameInput!): Game!
+  createPlayers(playersCreateInput: PlayersCreateInput!): Players!
+  deleteGame(deleteGameInput: DeleteGameInput!): Game!
+  deletePlayers(deletePlayersInput: DeletePlayersInput!): Players!
+  onWin(board: String!, id: Int!, score: String!): Boolean!
+  register(id: Int!, password: String!): Players!
+  updateGame(id: Int!, updateGameInput: UpdateGameInput!): Game!
+  updatePlayers(id: Int!, playersUpdateInput: UpdatePlayersInput!): Players!
+}
+
+type Players {
+  Games: [Game!]
+  created_date: DateTime!
+  id: Int!
+  loged_in: Boolean
+  password: String
+  player_one: String!
+  player_two: String!
+  score: String!
+  sign_one: String!
+  sign_two: String!
+}
+
+input PlayersCreateInput {
+  loged_in: Boolean
+  password: String
+  player_one: String!
+  player_two: String!
+  score: String!
+  sign_one: String!
+  sign_two: String!
+}
+
+type Query {
+  getGame(id: Int!): Game
+  getGames(id: Int): [Game!]!
+  getPlayer(id: Int!): Players
+  getPlayers(id: Int): [Players!]!
+  login(id: Int!, password: String): Players
+}
+
+input UpdateGameInput {
+  board: String
+  players_id: Int
+}
+
+input UpdatePlayersInput {
+  loged_in: Boolean
+  password: String
+  player_one: String
+  player_two: String
+  score: String
+  sign_one: String
+  sign_two: String
+}

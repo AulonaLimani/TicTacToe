@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Players {
+  id           Int      @id @default(autoincrement())
+  player_one   String   @default("Player one")
+  sign_one     String   @default("X")
+  player_two   String   @default("Player two")
+  sign_two     String   @default("O")
+  score        String   @default("0-0")
+  password     String?
+  loged_in     Boolean? @default(false)
+  created_date DateTime @default(now())
+  Games        Game[]
+}
+
+model Game {
+  id         Int      @id @default(autoincrement())
+  players_id Int?
+  board      String
+  Players    Players? @relation(fields: [players_id], references: [id], onDelete: Cascade)
+}

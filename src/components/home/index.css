@@ -1,0 +1,74 @@
+.bodyContainer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  height: 100vh;
+  width: 70%;
+  padding: 0 15%;
+}
+
+.container {
+  background-color: crimson;
+  height: auto;
+  width: 600px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px 10px rgba(255, 101, 101, 0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+}
+
+.register-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  color: white;
+  font-size: 25px;
+  padding-bottom: 25px;
+}
+
+.inputLabel {
+  width: 30%;
+}
+
+.inputClass {
+  all: unset;
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: grey;
+  color: black;
+  width: 70%;
+}
+
+.register-input-button {
+  cursor: pointer;
+  background-color: white;
+  padding: 10px 70px;
+  border-radius: 15px;
+  font-size: 25px;
+}
+
+.buttonClass {
+  all: unset;
+  height: auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

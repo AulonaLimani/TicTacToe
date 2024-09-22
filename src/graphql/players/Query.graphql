@@ -1,0 +1,48 @@
+query GetAllPlayers {
+  getPlayers {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+    loged_in
+  }
+}
+
+query GetPlayerById($id: Int!) {
+  getPlayer(id: $id) {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+    password
+    loged_in
+    Games {
+      id
+      board
+    }
+  }
+}
+
+query Login($id: Int!, $password: String) {
+  login(id: $id, password: $password) {
+    id
+    player_one
+    sign_one
+    player_two
+    sign_two
+    score
+    created_date
+    password
+    loged_in
+    Games {
+      id
+      board
+    }
+  }
+}

@@ -1,0 +1,33 @@
+query GetAllGames {
+  getGames {
+    id
+    players_id
+    board
+    players {
+      id
+      player_one
+      sign_one
+      player_two
+      sign_two
+      score
+      created_date
+    }
+  }
+}
+
+query GetGameById($id: Int!) {
+  getGame(id: $id) {
+    id
+    players_id
+    board
+    players {
+      id
+      player_one
+      sign_one
+      player_two
+      sign_two
+      score
+      created_date
+    }
+  }
+}

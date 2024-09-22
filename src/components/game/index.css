@@ -1,0 +1,201 @@
+.gameBodyContainer {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 70%;
+  padding: 0 15%;
+}
+
+.gameMainContainer {
+  background-color: crimson;
+  height: auto;
+  width: 600px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px 10px rgba(255, 101, 101, 0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerHeader {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: aliceblue;
+}
+
+.gameContainer {
+  background-color: black;
+  border-radius: 25px;
+  height: 500px;
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3%;
+  border: 2px solid blue;
+}
+
+.row {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.node {
+  width: 30%;
+  height: 97%;
+  border: 2px solid blue;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+}
+
+.clickedBlue {
+  background-color: bisque;
+  box-shadow: 0px 0px 30px 10px rgba(173, 216, 230, 0.5) !important;
+  color: blue;
+}
+
+.clickedRed {
+  background-color: bisque;
+  box-shadow: 0px 0px 30px 10px rgba(240, 128, 128, 0.5) !important;
+  color: red;
+}
+
+.won {
+  background-color: lightgreen !important;
+  box-shadow: 0px 0px 30px 10px rgba(144, 238, 144, 0.5) !important;
+}
+
+.node:hover {
+  background-color: azure;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+
+.restart {
+  margin-top: 20px;
+  height: 50px;
+  padding: 0 50px;
+  font-size: 15px;
+  font-weight: 900;
+  color: aliceblue;
+  background-color: black;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+.restart:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.signCardContainer {
+  background-color: crimson;
+  height: 300px;
+  width: 200px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: aliceblue;
+  box-shadow: 0px 0px 30px 10px rgba(220, 20, 60, 0.5);
+}
+
+.score {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signCardSign {
+  font-size: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.lighed {
+  background-color: peru !important;
+  box-shadow: 0px 0px 30px 10px rgba(205, 133, 63, 0.5) !important;
+}
+
+.wonSignCard {
+  background-color: lightgreen !important;
+  box-shadow: 0px 0px 30px 10px rgba(144, 238, 144, 0.5) !important;
+}
+
+.draw {
+  background-color: lightpink !important;
+  box-shadow: 0px 0px 30px 10px rgba(255, 182, 193, 0.5) !important;
+}
+
+.drawDiv {
+  margin-top: -10px;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loginHeader {
+  color: white;
+  font-size: 40px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: crimson;
+  padding: 50px;
+  border-radius: 50px;
+}
+
+.register-input-button {
+  cursor: pointer;
+  background-color: white;
+  padding: 10px 70px;
+  border-radius: 15px;
+  font-size: 25px;
+}
+
+.buttonClass {
+  all: unset;
+  height: auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
