@@ -1,27 +1,33 @@
 .leaderboardContainer {
-  background-color: black;
   color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 20px; 
 }
 
 .leaderboard {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 70%;
+  width: 80%;
+  padding-top:80px ;
 }
 
 .leaderboardRow {
-  height: 150px;
+  height: 110px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: crimson;
   border-radius: 30px;
-  box-shadow: 0px 0px 30px 10px rgba(255, 101, 101, 0.5);
+  background: linear-gradient(#383624, #282617);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+
+.leaderboardRow:hover{
+  background: #aca788; 
 }
 
 .playerContainer {
@@ -69,15 +75,48 @@
 }
 
 .back {
-  background-color: crimson;
+  background-color: #373523;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   height: 50px;
   width: 150px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  &:first-child {
-    text-decoration: none;
-  }
   cursor: pointer;
+}
+
+.back:hover {
+  background-color: #aca788; 
+}
+
+@media (max-width: 768px) {
+  .leaderboardContainer {
+    padding: 10px;
+  }
+
+  .leaderboard {
+    width: 90%; 
+  }
+
+  .leaderboardRow {
+    height: auto; 
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .playerContainer {
+    width: 100%; 
+  }
+
+  .scoreContainer {
+    width: 100%; 
+    justify-content: space-around;
+  }
+
+  .header {
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 20px;
+  }
 }

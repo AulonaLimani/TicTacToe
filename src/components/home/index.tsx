@@ -63,7 +63,7 @@ export const Home = () => {
           })}
         >
           {({ isSubmitting, setFieldValue }) => (
-            <Form>
+            <Form className="formContainer2">
               <Input label="Player one:" name={"player_one"} type="text" />
               <Input label="Sign one:" name={"sign_one"} type="text" />
               <Input label="Player two:" name={"player_two"} type="text" />

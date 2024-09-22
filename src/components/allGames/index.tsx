@@ -70,11 +70,20 @@ export const AllGames = (): JSX.Element => {
     <div className={classes.container}>
       <div className={classes.header}>
         <button
+          className={classes.backButton}
           onClick={() => {
             navigate(-1);
           }}
         >{`<Back`}</button>
         All Games
+        <button
+          className={classes.backButton}
+          onClick={() => {
+            navigate(`/game/${playerId}`);
+          }}
+        >
+          Play another game
+        </button>
       </div>
       <div className={classes.allGamesContainer}>
         {getPlayerData?.getPlayer?.Games &&

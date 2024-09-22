@@ -1,5 +1,5 @@
+
 .bodyContainer {
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,17 +11,21 @@
 }
 
 .container {
-  background-color: crimson;
+  background: linear-gradient(#383624, #282617);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   height: auto;
   width: 600px;
   border-radius: 30px;
-  box-shadow: 0px 0px 30px 10px rgba(255, 101, 101, 0.5);
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 15px;
   align-items: center;
+}
+
+.formContainer2{ 
+  width: 100%;
 }
 
 .title {
@@ -47,22 +51,34 @@
   all: unset;
   border-radius: 20px;
   padding: 5px 15px;
-  background-color: grey;
+  background-color: #aca788;
   color: black;
   width: 70%;
 }
 
-.register-input-button {
-  cursor: pointer;
-  background-color: white;
+.button {
   padding: 10px 70px;
   border-radius: 15px;
   font-size: 25px;
+  cursor: pointer;
 }
 
-.buttonClass {
-  all: unset;
-  height: auto;
+.register-input-button {
+  border:0.5px solid #f6e35a;
+}
+
+.restart {
+  margin-top: 20px;
+  height: 50px;
+  background-color: black;
+  border: 2px solid blue;
+  color: aliceblue;
+}
+
+.restart:hover,
+.register-input-button:hover {
+  background-color: #aca788;
+  color: black;
 }
 
 .buttons {
@@ -71,4 +87,5 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-top: 20px;
 }
